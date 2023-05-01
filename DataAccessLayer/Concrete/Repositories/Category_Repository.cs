@@ -12,7 +12,7 @@ namespace DataAccessLayer.Concrete.Repositories
 {
     public class Category_Repository : ICategory_DAL
     {
-        Context c=new Context();
+        Context c = new Context();
         DbSet<Category> _object;
         public void Delete(Category p)
         {
@@ -20,15 +20,20 @@ namespace DataAccessLayer.Concrete.Repositories
             c.SaveChanges();
         }
 
+        public Category Get(Expression<Func<Category, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Insert(Category p)
         {
             _object.Add(p);
-            c.SaveChanges();    
+            c.SaveChanges();
         }
 
         public List<Category> List()
         {
-            return _object.ToList();    
+            return _object.ToList();
         }
 
         public List<Category> List(Expression<Func<Category, bool>> filter)
@@ -40,5 +45,6 @@ namespace DataAccessLayer.Concrete.Repositories
         {
             c.SaveChanges();
         }
+
     }
 }

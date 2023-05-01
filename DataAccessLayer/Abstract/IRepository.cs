@@ -11,6 +11,7 @@ namespace DataAccessLayer.Abstract
     {
         List<T> List();
         void Insert(T p);
+        T Get(Expression<Func<T, bool>>filter);//silme işlemi yapmak için tek bir değer tutacak burada koşullu olarak tutacağı değer ıd olacak
         void Delete(T p);
         void Update(T p);
         List<T> List(Expression<Func<T, bool>> filter);
