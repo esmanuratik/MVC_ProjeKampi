@@ -54,6 +54,12 @@
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\Category_Repository.cs" />
     <Compile Include="Concrete\Repositories\Generic%3b_Repository.cs" />
+    <Compile Include="EntityFramework\EF_AboutDAL.cs" />
+    <Compile Include="EntityFramework\EF_CategoryDAL.cs" />
+    <Compile Include="EntityFramework\EF_ContactDAL.cs" />
+    <Compile Include="EntityFramework\EF_ContentDAL.cs" />
+    <Compile Include="EntityFramework\EF_HeadingDAL.cs" />
+    <Compile Include="EntityFramework\EF_WriterDAL.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,5 +77,6 @@
       <Version>6.4.4</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
