@@ -17,7 +17,7 @@ namespace MVC_ProjeKampi.Controllers
         CategoryManager cm = new CategoryManager(new EF_CategoryDAL()); 
         public ActionResult Index()
         {
-            //fjvkhsdjkfhdsjkfhsdfsdfsdfsdfdsfdsfghjjhgjghjgjhghjghj
+            int i = 1;
             return View();
         }
         public ActionResult GetCategoryList()
