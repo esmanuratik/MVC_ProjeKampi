@@ -2,9 +2,12 @@
 using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using static System.Collections.Specialized.BitVector32;
+using System.Web.UI.WebControls;
 
 namespace MVC_ProjeKampi.Controllers
 {
@@ -16,5 +19,7 @@ namespace MVC_ProjeKampi.Controllers
             var WriterValues = wm.GetList();
             return View(WriterValues);
         }
+
+
     }
 }
