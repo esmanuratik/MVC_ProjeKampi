@@ -23,6 +23,8 @@ namespace EntityLayer.Concrete
         public string WriterMail { get; set; }
         [StringLength(200)]
         public string WriterPassword { get; set; }
+        [StringLength(50)]
+        public string WriterTitle { get; set; }
         public ICollection<Heading> Headings { get; set; }//bir yazarın birden çok başlığı olabilir
         public ICollection<Content> Contents { get; set; }//bir yazarın  birden çok içeriği olabilir
 
