@@ -15,7 +15,7 @@ namespace EntityLayer.Concrete
         public string WriterName { get; set; }
         [StringLength(50)]
         public string WriterSurname { get; set; }
-        [StringLength(100)]
+        [StringLength(400)]
         public string WriterImage { get; set; }
         [StringLength(100)]
         public string WriterAbout { get; set; }
@@ -25,6 +25,7 @@ namespace EntityLayer.Concrete
         public string WriterPassword { get; set; }
         [StringLength(50)]
         public string WriterTitle { get; set; }
+        public bool WriterStatus { get; set; }//Yazarı silmek istediğimde aktif/pasif olayı gerçekleşsin  
         public ICollection<Heading> Headings { get; set; }//bir yazarın birden çok başlığı olabilir
         public ICollection<Content> Contents { get; set; }//bir yazarın  birden çok içeriği olabilir
 
