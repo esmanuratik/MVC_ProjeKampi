@@ -49,6 +49,7 @@
     <Compile Include="Abstract\IContact_DAL.cs" />
     <Compile Include="Abstract\IContent_DAL.cs" />
     <Compile Include="Abstract\IHeading_DAL.cs" />
+    <Compile Include="Abstract\IMessage_DAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriter_DAL.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="EntityFramework\EF_ContactDAL.cs" />
     <Compile Include="EntityFramework\EF_ContentDAL.cs" />
     <Compile Include="EntityFramework\EF_HeadingDAL.cs" />
+    <Compile Include="EntityFramework\EF_MessageDAL.cs" />
     <Compile Include="EntityFramework\EF_WriterDAL.cs" />
     <Compile Include="Migrations\202305030941451_mig_writer_edit.cs" />
     <Compile Include="Migrations\202305030941451_mig_writer_edit.designer.cs">
@@ -87,6 +89,10 @@
     <Compile Include="Migrations\202305212053053_mig_add_messageClass.cs" />
     <Compile Include="Migrations\202305212053053_mig_add_messageClass.designer.cs">
       <DependentUpon>202305212053053_mig_add_messageClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305271400006_mig_contactaddDate.cs" />
+    <Compile Include="Migrations\202305271400006_mig_contactaddDate.designer.cs">
+      <DependentUpon>202305271400006_mig_contactaddDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305212053053_mig_add_messageClass.resx">
       <DependentUpon>202305212053053_mig_add_messageClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305271400006_mig_contactaddDate.resx">
+      <DependentUpon>202305271400006_mig_contactaddDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
