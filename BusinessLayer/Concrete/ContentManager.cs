@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void ContentAdd(Content content)
         {
-            throw new NotImplementedException();
+            _contentDal.Insert(content);
         }
 
         public void ContentDelete(Content content)
@@ -40,13 +40,18 @@ namespace BusinessLayer.Concrete
 
         public List<Content> GetList()//burada bir parametreye bağlı olarak listeleme yapmak için gerekli şartı çağırmalıyım.Çünkü öbür türlü bütün listeyi bana çağıracaktır.Burada bütün kisteyi istemiyorum bir parametre listlemek istiyorum.IContent_Service parametreli listeleme metodu yazıyorum .
         {
-            throw new NotImplementedException();
+            return _contentDal.List();
         }
 
         public List<Content> GetListByHeadingID(int id)//listelemeyi başlıktaki id ye göre yapmak istiyorum
         {
             //geriye birşey dönüdrmesi gerekiyor
             return _contentDal.List(x=>x.HeadingID==id);
+        }
+
+        public List<Content> GetListByWriter(int id)
+        {
+            return _contentDal.List(x => x.WriterID == id);//id ye göre yazarın işlemlerini session il getşrmek için yazdık
         }
     }
 }

@@ -31,13 +31,13 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetListInbox()
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");//alıcı 
+            return _messageDal.List(x => x.ReceiverMail == "aliyildiz@gmail.com");//alıcı 
             //mesaj iletilme kısmında mesajı alabilmek için receivermaile ihtiyacım var yani alıcı mail.Fakat bu sağlıklı bir yöntem değil.Sadece ilgili değerin çalışıp çalışmadığı kontrol edilicecek
         }
 
         public List<Message> GetListSendbox()//gönderen
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+            return _messageDal.List(x => x.SenderMail == "aliyildiz@gmail.com");
         }
 
         public void MessageAdd(Message message)//yeni bir mesaj ekleyebilmek için 

@@ -15,6 +15,7 @@ namespace MVC_ProjeKampi.Controllers
     {
         MessageManager mm = new MessageManager(new EF_MessageDAL());
         Message_Validatior messagevalidatior=new Message_Validatior();
+        [Authorize]
         public ActionResult Inbox()//gelen mesajlar burada listelenecek.(veriler listelenecek)
         {
             var messagelist = mm.GetListInbox();

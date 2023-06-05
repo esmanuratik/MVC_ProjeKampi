@@ -12,6 +12,8 @@ namespace MVC_ProjeKampi
     {
         protected void Application_Start()
         {
+            GlobalFilters.Filters.Add(new AuthorizeAttribute());//Login olmayan giremesin diye authorize ı proje bazına taşıdık.
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

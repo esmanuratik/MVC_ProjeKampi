@@ -10,6 +10,7 @@ namespace BusinessLayer.Abstract
    public interface IHeading_Service
     {
         List<Heading> GetList();   //Heading sınıfına ait dizinimi dahil etmiş oldum.
+        List<Heading> GetListByWriter(int id);//istediğim koşullara gre başlkları getrebilmem için oluşturuldu writer panel için
         void HeadingAdd(Heading heading);
         //id yi silmek için bulma işleminin metotu (imzası atılacak) yazılacak
         Heading GetByID(int id);

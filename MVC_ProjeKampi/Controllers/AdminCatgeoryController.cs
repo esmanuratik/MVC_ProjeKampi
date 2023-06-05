@@ -13,7 +13,10 @@ namespace MVC_ProjeKampi.Controllers
 {
     public class AdminCatgeoryController : Controller
     {
+
         CategoryManager cm= new CategoryManager(new EF_CategoryDAL());
+
+        [Authorize(Roles="B")]//Role B olanlar kategorilere girsin başka kimse giremsins
         public ActionResult Index()
         {
             var categoryvalues = cm.GetList();

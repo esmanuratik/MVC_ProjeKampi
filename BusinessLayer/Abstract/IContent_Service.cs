@@ -10,6 +10,7 @@ namespace BusinessLayer.Abstract
     public interface IContent_Service
     {
         List<Content> GetList();   //content sınıfına ait dizinimi dahil etmiş oldum.
+        List<Content> GetListByWriter(int id); //Yazara göre işlem yapmak için ekledim WriterPanelController için
 
         List<Content> GetListByHeadingID(int id);//GetByListID ise Id ye göre bütün listeyi döndürür.Böylece başlığa hazırlamış olurum yapıyı
         void ContentAdd(Content content);

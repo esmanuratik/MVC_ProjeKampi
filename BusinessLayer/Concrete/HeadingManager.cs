@@ -28,6 +28,11 @@ namespace BusinessLayer.Concrete
            return _headingDAL.List();
         }
 
+        public List<Heading> GetListByWriter(int id)
+        {
+            return _headingDAL.List(x => x.WriterID == id);//Sessionda id ye göre başlık çekme işlemi yapılacak.
+        }
+
         public void HeadingAdd(Heading heading)
         {
             _headingDAL.Insert(heading);  
