@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,8 @@ namespace MVC_ProjeKampi.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        // GET: Login
+        WriterLoginManager wm = new WriterLoginManager(new EF_WriterDAL());
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -46,9 +49,10 @@ namespace MVC_ProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer p)
         {
-            Context c = new Context();
+            //Context c = new Context();
 
-            var writeruserinfo = c.Writerss.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            //var writeruserinfo = c.Writerss.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            var writeruserinfo = wm.GetWriter(p.WriterMail, p.WriterPassword);
 
             if (writeruserinfo != null)
             {

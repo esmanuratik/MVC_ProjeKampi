@@ -29,15 +29,18 @@ namespace BusinessLayer.Concrete
         //    //mesaj iletilme kısmında mesajı alabilmek için receivermaile ihtiyacım var yani alıcı mail.Fakat bu sağlıklı bir yöntem değil.Sadece ilgili değerin çalışıp çalışmadığı kontrol edilicecek
         //}
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string p)
         {
-            return _messageDal.List(x => x.ReceiverMail == "aliyildiz@gmail.com");//alıcı 
+            //return _messageDal.List(x => x.ReceiverMail == "aliyildiz@gmail.com");//alıcı 
             //mesaj iletilme kısmında mesajı alabilmek için receivermaile ihtiyacım var yani alıcı mail.Fakat bu sağlıklı bir yöntem değil.Sadece ilgili değerin çalışıp çalışmadığı kontrol edilicecek
+            return _messageDal.List(x => x.ReceiverMail == p);
+            //mesajları mail değil de artık sessiondan çekmek için bir p parametresi gönderiyorum.Bunu IMesaageService de de yapmalısın.
         }
 
-        public List<Message> GetListSendbox()//gönderen
+        public List<Message> GetListSendbox(string p)//gönderen
         {
-            return _messageDal.List(x => x.SenderMail == "aliyildiz@gmail.com");
+            //return _messageDal.List(x => x.SenderMail == "aliyildiz@gmail.com");
+            return _messageDal.List(x => x.SenderMail == p);
         }
 
         public void MessageAdd(Message message)//yeni bir mesaj ekleyebilmek için 

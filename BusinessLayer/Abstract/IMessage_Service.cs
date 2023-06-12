@@ -9,8 +9,8 @@ namespace BusinessLayer.Abstract
 {
     public interface IMessage_Service
     {
-        List<Message> GetListInbox();   //gelen message sınıfına ait dizinimi dahil etmiş oldum.
-        List<Message> GetListSendbox();   //gönderilen message sınıfına ait dizinimi dahil etmiş oldum.
+        List<Message> GetListInbox(string p);   //gelen message sınıfına ait dizinimi dahil etmiş oldum.Sessiondan değer çekmek iççin p parametereesi gönderdim.
+        List<Message> GetListSendbox(string p);   //gönderilen message sınıfına ait dizinimi dahil etmiş oldum.
         void MessageAdd(Message message);
         //id yi silmek için bulma işleminin metotu (imzası atılacak) yazılacak
         Message GetByID(int id);

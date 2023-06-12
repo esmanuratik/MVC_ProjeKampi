@@ -16,14 +16,14 @@ namespace MVC_ProjeKampi.Controllers
         MessageManager mm = new MessageManager(new EF_MessageDAL());
         Message_Validatior messagevalidatior=new Message_Validatior();
         [Authorize]
-        public ActionResult Inbox()//gelen mesajlar burada listelenecek.(veriler listelenecek)
+        public ActionResult Inbox(string p)//gelen mesajlar burada listelenecek.(veriler listelenecek)
         {
-            var messagelist = mm.GetListInbox();
+            var messagelist = mm.GetListInbox(p);//sessiondan deger çekmek için p parametresi gönderdim.
             return View(messagelist);
         }
-        public ActionResult Sendbox()//gönderilen mesajlar burada listelenecek.(veriler listelenecek)
+        public ActionResult Sendbox(string p)//gönderilen mesajlar burada listelenecek.(veriler listelenecek)
         {
-            var messagelist = mm.GetListSendbox();
+            var messagelist = mm.GetListSendbox(p);
             return View(messagelist);
         }
         //gelen kutusundaki mesaj detyaları
