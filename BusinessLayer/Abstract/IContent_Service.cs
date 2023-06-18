@@ -9,7 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IContent_Service
     {
-        List<Content> GetList();   //content sınıfına ait dizinimi dahil etmiş oldum.
+        List<Content> GetList(string p);   //content sınıfına ait dizinimi dahil etmiş oldum.// aram işlemi yapılacağı zaman gerekli paramtereye göre değerleri getirsin diye string p parametresi gönderdim.
         List<Content> GetListByWriter(int id); //Yazara göre işlem yapmak için ekledim WriterPanelController için
 
         List<Content> GetListByHeadingID(int id);//GetByListID ise Id ye göre bütün listeyi döndürür.Böylece başlığa hazırlamış olurum yapıyı

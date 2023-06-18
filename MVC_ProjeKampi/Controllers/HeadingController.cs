@@ -22,7 +22,13 @@ namespace MVC_ProjeKampi.Controllers
            var headingvalues= hm.GetList();
             return View(headingvalues);
         }
-        [HttpGet]
+        public ActionResult HeadingReport()
+        {
+			var headingvalues = hm.GetList();
+			return View(headingvalues);
+		}
+
+		[HttpGet]
         public ActionResult AddHeading()
         {
             List<SelectListItem> valuecategory = (from x in cm.GetList()//dropdownList i burada doldurdum bunu addheadiing view e eklyiorum.

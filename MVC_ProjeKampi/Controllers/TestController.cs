@@ -13,5 +13,10 @@ namespace MVC_ProjeKampi.Controllers
         {
             return View();
         }
-    }
+		public ActionResult SweetAlert()
+		{
+			return View();
+		}
+
+	}
 }
